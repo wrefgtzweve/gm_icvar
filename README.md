@@ -1,11 +1,11 @@
-# WIP gm_icvar
+# gm_icvar
 Gmod dll that allows you to change convars.
 Eg allows you to change FCVAR_CHEAT convars 
 
 Example:  
-![image](https://user-images.githubusercontent.com/69946827/212337794-e5e230c5-114a-41d2-be65-776b1ab68d05.png)
+![image](https://user-images.githubusercontent.com/69946827/212393931-2a0c4568-53e1-40dd-83bf-5d26bfb66313.png)
 
-Functions:  
+Current functions:  
 ```
 icvar.SetValue( string convar, string/number value )
 ```
