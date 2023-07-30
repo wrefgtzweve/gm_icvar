@@ -16,17 +16,18 @@ ConVar* GetConvar( const char *convar_str, GarrysMod::Lua::ILuaBase *LUA) {
 
 LUA_FUNCTION(SetValue) {
     LUA->CheckString(1);
-    const int type = LUA->GetType(2);
     const char* convar_str = LUA->GetString(1);
-    const float new_value = LUA->GetNumber(2);
+    const int type = LUA->GetType(2);
 
     ConVar* found_cvar = GetConvar(convar_str, LUA);
 
     if (type == GarrysMod::Lua::Type::Number) {
-        found_cvar->SetValue(static_cast<float>(new_value));
+        const char* new_value = LUA->GetNumber(2);
+        found_cvar->SetValue(new_value);
     }
     else if (type == GarrysMod::Lua::Type::String) {
-        found_cvar->SetValue(static_cast<char>(new_value));
+        const char* new_value = LUA->GetString(2);
+        found_cvar->SetValue(new_value);
     }
     else {
         LUA->ArgError(2,"Invalid value type input");
