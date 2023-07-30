@@ -30,6 +30,7 @@
 #error "implement me"
 #endif
 
+void emptyCallback( IConVar *var, const char *pOldValue, float flOldValue) { return; }
 
 //-----------------------------------------------------------------------------
 // Forward declarations
@@ -369,6 +370,11 @@ public:
 	bool						GetMax( float& maxVal ) const;
 	const char					*GetDefault( void ) const;
 	void						SetDefault( const char *pszDefault );
+
+    // Added
+    void UnsetCallback(){
+        m_fnChangeCallback = emptyCallback
+    }
 
 private:
 	// Called by CCvar when the value of a var is changing.
