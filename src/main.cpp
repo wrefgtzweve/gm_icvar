@@ -22,7 +22,7 @@ LUA_FUNCTION(SetValue) {
     ConVar* found_cvar = GetConvar(convar_str, LUA);
 
     if (type == GarrysMod::Lua::Type::Number) {
-        const char* new_value = LUA->GetNumber(2);
+        const int new_value = LUA->GetNumber(2);
         found_cvar->SetValue(new_value);
     }
     else if (type == GarrysMod::Lua::Type::String) {
