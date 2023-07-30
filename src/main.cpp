@@ -3,7 +3,7 @@
 #include <GarrysMod/InterfacePointers.hpp>
 
 #include <icvar.h>
-#include convar.h
+#include "convar.h"
 
 ConVar* GetConvar( const char *convar_str, GarrysMod::Lua::ILuaBase *LUA) {
     ICvar* icvar = InterfacePointers::Cvar();
