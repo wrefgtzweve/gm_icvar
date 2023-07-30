@@ -373,7 +373,7 @@ public:
 
     // Added
     void UnsetCallback(){
-        m_fnChangeCallback = emptyCallback
+        m_fnChangeCallback = emptyCallback;
     }
 
 private:
