@@ -30,7 +30,7 @@
 #error "implement me"
 #endif
 
-void emptyCallback( IConVar *var, const char *pOldValue ) { return; }
+void emptyCallback( IConVar *var, const char *pOldValue, float flOldValue) { return; }
 
 //-----------------------------------------------------------------------------
 // Forward declarations
