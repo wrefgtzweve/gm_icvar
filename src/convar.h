@@ -373,7 +373,9 @@ public:
 
     // Added
     void UnsetCallback(){
-        m_fnChangeCallback = emptyCallback;
+        if(this->m_fnChangeCallback){
+            this->m_fnChangeCallback = emptyCallback;
+        }
     }
 
 private:
