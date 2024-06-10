@@ -1,11 +1,16 @@
-name: Build
+name: Build & Release
 
 on: [push,workflow_dispatch]
 
 jobs:
-  build:
-    uses: RaphaelIT7/gmod-common-module-base/.github/workflows/compile.yml@workflow
+  build-release:
+    uses: RaphaelIT7/gmod-common-module-base/.github/workflows/compile-release.yml@workflow
+    permissions:
+      contents: write
     with:
       PROJECT_NAME: "icvar"
       BUILD_64x: "true"
       REALM: "sv"
+      ARTIFACT_EXPIRE: "30"
+      RELEASE_DRAFT: false
+      RELEASE_LATEST: true
